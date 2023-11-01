@@ -1,18 +1,24 @@
-import React from "react"
+import { useState } from "react"
 import "./style.css"
 
 
 
 
 function App() {
+  const [newitem,setNewitem] = useState("")
+  const [todos,setTodos]     = useState("")
   
 
   return (
     <>
-   <form className="new-item-form">
+   <form onSubmit={handlesubmit} 
+   className="new-item-form">
     <div className="form-row">
       <label> New Item</label>
-      <input type="text" id></input>
+      <input 
+      value={newitem} 
+      onChange={e => setNewitem(e.target.value)}
+      type="text" id></input>
       
     </div>
     <button className="btn"> </button>
